@@ -20,6 +20,25 @@ func calculos2(n1, n2 int) (soma int, subtracao int) { //aqui ele já declara as
 	return //não precisa completar o return pq ele já sabe o q retorna
 }
 
+func calculos3(nome string, numeros ...int) int { //função variática - recebe um numero variado de parametros
+	// numeros eh um slice, ele deve ser o último parametro
+	total := 0
+	fmt.Println(nome)
+	for _, numero := range numeros {
+		total += numero
+	}
+	return total
+}
+
+//função recursiva eh normal
+func fibonacci(posicao uint) uint {
+	if posicao <= 1 {
+		return posicao
+	}
+
+	return fibonacci(posicao-2) + fibonacci(posicao-1)
+}
+
 func Funcao() {
 	soma := somar(2, 4)
 	fmt.Println(soma)
@@ -39,5 +58,21 @@ func Funcao() {
 	fmt.Println(v1, v3)
 
 	fmt.Println(calculos2(4, 2))
+
+	fmt.Println(calculos3("abc", 1, 2, 3, 4, 5, 6))
+
+	//funcao anonima -  não tem nome e fica aqui dentro, eh estranho
+	retorno2 := func(a, b int) int {
+		return a + b
+	}(2, 4)
+
+	fmt.Println("função anonima:", retorno2)
+
+	fmt.Println("Função recursiva:")
+	posicao := uint(12)
+	for i := uint(1); i <= posicao; i++ {
+		fmt.Print(fibonacci(i), " ") //chamada recursiva
+	}
+	fmt.Println()
 
 }
