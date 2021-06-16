@@ -9,7 +9,8 @@ package main
 
 import (
 	"fmt"
-	"modulo/funcoes4"
+	"modulo/funcoesmais13"
+	//"modulo/funcoes4"
 	//"modulo/loops12"
 	//"modulo/estcontrole11"
 	//"modulo/mapas10"
@@ -25,11 +26,10 @@ import (
 )
 
 func main() {
-	fmt.Println("Ola mundo!")
 	//pacote1.Escreve()
 	//variaveis2.Vars()
 	//tiposdados3.Funcao()
-	funcoes4.Funcao()
+	//funcoes4.Funcao()
 	//operadores5.Funcao()
 	//estruturas6.Funcao()
 	//heranca7.Funcao()
@@ -38,4 +38,12 @@ func main() {
 	//mapas10.Funcao()
 	//estcontrole11.Funcao()
 	//loops12.Funcao()
+	funcoesmais13.Funcao()
+}
+
+// a init eh chamada antes da main
+// todos os arquivos podem ter uma init, ela eh chamada assim que os pacotes são importados
+// o ultimo init a ser chamado eh esse aqui:
+func init() {
+	fmt.Println("Hello word!")
 }
