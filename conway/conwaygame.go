@@ -5,6 +5,7 @@ package main
 
 import (
 	"fmt"
+	"math/rand"
 	"os"
 	"os/exec"
 	"time"
@@ -12,6 +13,18 @@ import (
 
 const ALT int = 15
 const LAR int = 60
+
+func preencheMapa(mapa *[ALT][LAR]int) {
+
+	for i := 1; i < ALT-1; i++ {
+		for j := 1; j < LAR-1; j++ {
+			if rand.Intn(100) > 70 {
+				mapa[i][j] = 1
+			}
+		}
+	}
+
+}
 
 func exibeMapa(mapa [ALT][LAR]int) {
 	//fmt.Println(mapa)
@@ -77,58 +90,7 @@ func main() {
 
 	var mapa [ALT][LAR]int
 
-	mapa[1][3] = 1
-	mapa[2][3] = 1
-	mapa[3][3] = 1
-	mapa[4][3] = 1
-
-	mapa[4][12] = 1
-	mapa[4][13] = 1
-	mapa[4][14] = 1
-	mapa[3][14] = 1
-	mapa[2][13] = 1
-
-	mapa[9][16] = 1
-	mapa[9][15] = 1
-	mapa[9][14] = 1
-	mapa[8][14] = 1
-	mapa[7][15] = 1
-
-	mapa[5][22] = 1
-	mapa[6][22] = 1
-	mapa[6][23] = 1
-
-	mapa[9][22] = 1
-	mapa[10][22] = 1
-	mapa[10][23] = 1
-
-	mapa[4][32] = 1
-	mapa[4][33] = 1
-	mapa[4][34] = 1
-	mapa[3][34] = 1
-	mapa[2][33] = 1
-
-	mapa[5][42] = 1
-	mapa[6][42] = 1
-	mapa[7][42] = 1
-	mapa[5][43] = 1
-	mapa[6][43] = 1
-	mapa[7][43] = 1
-	mapa[5][44] = 1
-	mapa[6][44] = 1
-	mapa[7][44] = 1
-
-	mapa[6][50] = 1
-	mapa[6][50] = 1
-	mapa[7][51] = 1
-	mapa[6][51] = 1
-	mapa[6][52] = 1
-	mapa[7][52] = 1
-	mapa[6][53] = 1
-	mapa[7][53] = 1
-	mapa[5][54] = 1
-	mapa[6][54] = 1
-	mapa[8][54] = 1
+	preencheMapa(&mapa)
 
 	for i := 0; i < 100; i++ {
 
