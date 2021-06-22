@@ -9,20 +9,20 @@ package main
 
 import (
 	"fmt"
-	"modulo/funcoesmais13"
-	//"modulo/funcoes4"
-	//"modulo/loops12"
-	//"modulo/estcontrole11"
-	//"modulo/mapas10"
-	//"modulo/arrayslices9"
-	//"modulo/ponteiros8"
-	//"modulo/heranca7"
 	//"modulo/pacote1"
 	//"modulo/variaveis2"
 	//"modulo/tiposdados3"
 	//"modulo/funcoes4"
 	//"modulo/operadores5"
 	//"modulo/estruturas6"
+	//"modulo/heranca7"
+	//"modulo/ponteiros8"
+	//"modulo/arrayslices9"
+	//"modulo/mapas10"
+	//"modulo/estcontrole11"
+	//"modulo/loops12"
+	//"modulo/funcoesmais13"
+	"modulo/metodos14"
 )
 
 func main() {
@@ -38,7 +38,10 @@ func main() {
 	//mapas10.Funcao()
 	//estcontrole11.Funcao()
 	//loops12.Funcao()
-	funcoesmais13.Funcao()
+	//funcoesmais13.Funcao()
+	//metodos14.Funcao1()
+	//metodos14.Funcao2()
+	metodos14.Funcao3()
 }
 
 // a init eh chamada antes da main
