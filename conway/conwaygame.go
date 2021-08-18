@@ -1,8 +1,5 @@
 package main
 
-// TODO
-// implentar DEFINE
-
 import (
 	"fmt"
 	"math/rand"
