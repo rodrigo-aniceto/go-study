@@ -17,19 +17,21 @@ type comida struct {
 }
 
 type rato struct {
-	posY   int
-	posX   int
-	destY  int
-	destX  int
-	passos int
+	posY      int
+	posX      int
+	destY     int
+	destX     int
+	passos    int
+	refeicoes int
 }
 
-func (r *rato) inicializaRato() {
-	r.posX = 5
-	r.posY = 5
-	r.destX = 5
-	r.destY = 5
+func (r *rato) inicializaRato(x, y int) {
+	r.posX = x
+	r.posY = y
+	r.destX = x
+	r.destY = y
 	r.passos = 0
+	r.refeicoes = 0
 }
 
 func medirDistancia(ax, bx, ay, by int) int {
@@ -46,12 +48,13 @@ func medirDistancia(ax, bx, ay, by int) int {
 
 func atualizaMapa(mapa *[ALT][LAR]int, listaComida *[]comida, mickey *rato) {
 
-	// se já encontrou comida, procurar a mais proxima
+	// se já encontrou comida, procurar outra mais proxima
 	if mickey.posX == mickey.destX && mickey.posY == mickey.destY {
 		for i := 0; i < len(*listaComida); i++ {
 			// remover da lista
 			if (*listaComida)[i].posX == mickey.posX && (*listaComida)[i].posY == mickey.posY {
 				*listaComida = append((*listaComida)[:i], (*listaComida)[i+1:]...)
+				mickey.refeicoes += 1
 				break
 			}
 		}
@@ -116,7 +119,7 @@ func preencheMapa(mapa *[ALT][LAR]int, listaComida *[]comida) {
 
 	for i := 1; i < ALT-1; i++ {
 		for j := 1; j < LAR-1; j++ {
-			if rand.Intn(100) > 97 {
+			if rand.Intn(100) > 90 {
 				mapa[i][j] = '*'
 
 				c.posY = i
@@ -148,7 +151,7 @@ func main() {
 	var listaComida []comida
 	var mickey rato
 
-	mickey.inicializaRato()
+	mickey.inicializaRato(5, 5)
 
 	preencheMapa(&mapa, &listaComida)
 	mapa[mickey.posY][mickey.posX] = 'C'
@@ -165,5 +168,6 @@ func main() {
 		exibeMapa(mapa)
 		time.Sleep(time.Second / 4)
 	}
-	fmt.Println("Numero de passos: ", mickey.passos)
+	fmt.Println("Número de passos:", mickey.passos, "\nNúmero de refeições:", mickey.refeicoes)
+
 }

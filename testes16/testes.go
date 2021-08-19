@@ -3,6 +3,7 @@ package testes16
 import (
 	"fmt"
 	"modulo/testes16/enderecos"
+	"modulo/testes16/formas"
 )
 
 //apenas executa funcao de endereco.go, os testes estão em enderecos_test.go
@@ -22,4 +23,8 @@ func Funcao() {
 
 	tipoEndereco = enderecos.TipoDeEndereco("SQN 202")
 	fmt.Println(tipoEndereco)
+
+	quadrado := formas.Retangulo{Altura: 12, Largura: 12}
+	fmt.Println(quadrado.Area())
+
 }
