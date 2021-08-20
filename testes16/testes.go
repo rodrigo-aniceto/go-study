@@ -21,7 +21,7 @@ func Funcao() {
 	tipoEndereco := enderecos.TipoDeEndereco("Avenida Paulista")
 	fmt.Println(tipoEndereco)
 
-	tipoEndereco = enderecos.TipoDeEndereco("SQN 202")
+	tipoEndereco = enderecos.TipoDeEndereco("SQN 102")
 	fmt.Println(tipoEndereco)
 
 	quadrado := formas.Retangulo{Altura: 12, Largura: 12}
