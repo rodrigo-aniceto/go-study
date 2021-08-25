@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+</head>
+<body>
+    <h2>
+        Página Principal
+    </h2>
+    <marquee>
+        <h4>Seja bem vindo, {{ .Nome }}</h4> <!--enviando uma strunct que veio do go-->
+    </marquee>
+
+    <button id="botao"> Clique em mim</button>
+
+
+    <script>
+        var b1 = document.getElementById("botao")
+        b1.onclick = function(){
+            alert("botão foi clicado com sucesso")
+        }
+    </script>
+</body>
+</html>
+

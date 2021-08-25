@@ -9,7 +9,8 @@ package main
 
 import (
 	"fmt"
-	"modulo/json17"
+	"modulo/html19"
+	//"modulo/http18"
 	//"modulo/pacote1"
 	//"modulo/variaveis2"
 	//"modulo/tiposdados3"
@@ -50,7 +51,9 @@ func main() {
 	//concorrencia15.FuncaoSelect()
 	//concorrencia15.FuncaoPadroes()
 	//testes16.Funcao()
-	json17.Funcao()
+	//json17.Funcao()
+	//http18.Funcao()
+	html19.Funcao()
 
 }
 
