@@ -9,7 +9,9 @@ package main
 
 import (
 	"fmt"
-	"modulo/html19"
+	"modulo/crud21"
+	//"modulo/bancodados20"
+	//"modulo/html19"
 	//"modulo/http18"
 	//"modulo/pacote1"
 	//"modulo/variaveis2"
@@ -53,8 +55,9 @@ func main() {
 	//testes16.Funcao()
 	//json17.Funcao()
 	//http18.Funcao()
-	html19.Funcao()
-
+	//html19.Funcao()
+	//bancodados20.Funcao()
+	crud21.Funcao()
 }
 
 // a init eh chamada antes da main
