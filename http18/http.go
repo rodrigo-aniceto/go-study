@@ -26,8 +26,10 @@ func Funcao() {
 
 	http.HandleFunc("/", telaRaiz)
 	http.HandleFunc("/home", telaHome) //criar funções segundo o padrão de cima
+	http.HandleFunc("/home/", telaHome)
 
 	http.HandleFunc("/usuarios", telaUsuarios)
+	http.HandleFunc("/usuarios/", telaUsuarios)
 
 	// servidor rodando no localhost porta 5000 se declara as rotas antes disso, pq ele vai parar aqui
 	log.Fatal(http.ListenAndServe(":5000", nil))

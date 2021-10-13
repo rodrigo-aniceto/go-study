@@ -8,6 +8,12 @@ import (
 	_ "github.com/go-sql-driver/mysql"
 )
 
+type usuario struct {
+	ID    uint32
+	Nome  string
+	Email string
+}
+
 //precisa de: go get github.com/go-sql-driver/mysql
 // importa com _ na frente pq sera o pacote sql que vai usar e não esse
 func Funcao() {
@@ -34,5 +40,18 @@ func Funcao() {
 
 	defer linhas.Close()
 
-	fmt.Println(linhas)
+	//fmt.Println(linhas) //aqui são endereços de memoria inteligiveis
+
+	var usuarios []usuario
+	for linhas.Next() {
+		var usuario usuario
+
+		if erro := linhas.Scan(&usuario.ID, &usuario.Nome, &usuario.Email); erro != nil { //deve estar na ordem do resultado da consulta, pode definir essa ordem no select
+			log.Fatal(erro)
+		}
+
+		usuarios = append(usuarios, usuario)
+	}
+
+	fmt.Println(usuarios)
 }

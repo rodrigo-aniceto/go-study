@@ -38,7 +38,7 @@ func CriarUsuario(rw http.ResponseWriter, r *http.Request) {
 	}
 	defer db.Close()
 
-	statement, erro := db.Prepare("insert into usuarios (nome, email ) values (?, ?)")
+	statement, erro := db.Prepare("insert into usuarios (nome, email) values (?, ?)")
 	if erro != nil {
 		rw.Write([]byte("Erro ao criar o statement"))
 		return
@@ -80,7 +80,7 @@ func BuscarUsuarios(rw http.ResponseWriter, r *http.Request) {
 	for linhas.Next() {
 		var usuario usuario
 
-		if erro := linhas.Scan(&usuario.ID, &usuario.Nome, &usuario.Email); erro != nil {
+		if erro := linhas.Scan(&usuario.ID, &usuario.Nome, &usuario.Email); erro != nil { //deve estar na mesma ordem do resultado da consulta, é possivel definir essa ordem no select
 			rw.Write([]byte("Erro ao escanear usuários"))
 			return
 		}
